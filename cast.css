@@ -1,0 +1,107 @@
+:root {
+  --google-cast-player-color: #1973e7;
+  --audio-player-color: teal;
+  --player-color: teal
+}
+
+/* cast button */
+
+#castbutton {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  --connected-color: #1973e7; /* from https://developers.google.com/cast */
+  --disconnected-color: teal;
+  cursor: pointer;
+}
+
+/* audio controls */
+/* https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/ */
+
+input[type="range"] {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 8rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #ccc;
+  height: 0.25rem;
+  border-radius: 0.1rem;
+}
+input[type="range"]::-moz-range-track {
+  background: #ccc;
+  height: 0.25rem;
+  border-radius: 0.1rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -6px;
+  background-color: teal;
+  height: 1rem;
+  width: 0.2rem;
+  border-radius: 0.1rem;
+}
+input[type="range"]::-moz-range-thumb {
+  background-color: teal;
+  height: 1rem;
+  width: 0.13rem;
+  border-radius: 0.1rem;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid gray;
+  outline: 1px solid gray;
+  outline-offset: 0.125rem;
+}
+input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid gray;
+  outline: 1px solid gray;
+  outline-offset: 0.125rem;
+}
+
+.audiocontrols {
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  color: teal;
+  background: #eee;
+  border: 1px solid;
+  border-color: var(--player-color);
+  border-radius: 8px;
+  padding: 0.26rem 1rem;
+}
+
+.audiocontrols-play-pause-button, .audiocontrols-mute-unmute-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+}
+
+.audiocontrols-play-pause-button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.audiocontrols-mute-unmute-button svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.audiocontrols-play-icon, .audiocontrols-pause-icon, .audiocontrols-speaker-icon, .audiocontrols-speaker-slash-icon {
+  fill: black;
+}
+
+.audiocontrols-pause-icon, .audiocontrols-speaker-slash-icon {
+  display: none;
+}

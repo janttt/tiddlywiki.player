@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# Allow
+!.gitignore
+!LICENSE
+!README.md
+!anttt-kit.js
+!audiocontroller.js
+!audiocontrollermanager.js
+!audioplayer.js
+!audiowidget.js
+!cast.css
+!castbutton.tid
+!googlecast-framework.tid
+!googlecast.js
+
