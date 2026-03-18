@@ -319,7 +319,7 @@ if (!$tw.browser) return
       this.#tracks.forEach((track, i) => {
         const trackTiddler = track.tiddler
         const cdcoverpath     = trackTiddler.fields['_mvt-dir'] + "/cdcover.jpeg"
-        const cd              = trackTiddler.fields['_mvt-cd'].replace(/^[0-9- ]+: /, "")
+        const cd              = trackTiddler.fields['_mvt-cd'].replace(/^[A-Z0-9- ]+: /, "")
         const work            = trackTiddler.fields['_mvt-work']
         const movement        = trackTiddler.fields['_mvt-movement']
         const movementNumber  = trackTiddler.fields['_mvt-movementNumber']
@@ -431,7 +431,7 @@ if (!$tw.browser) return
     }
 
     #cdComparator(t1, t2) {
-      const re = /^[0-9A-Z ]+: /
+      const re = /^[A-Z0-9- ]+: /
       const cd1 = t1.tiddler.fields["_mvt-cd"].replace(re, "")
       const cd2 = t2.tiddler.fields["_mvt-cd"].replace(re, "")
       return cd1.localeCompare(cd2, "en", { numeric: true })
