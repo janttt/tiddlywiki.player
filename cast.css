@@ -1,18 +1,22 @@
 :root {
   --google-cast-player-color: #1973e7;
   --audio-player-color: teal;
-  --player-color: teal
+  --player-color: teal;
 }
 
 /* cast button */
 
 #castbutton {
-  display: inline-block;
+  display: none;
   width: 32px;
   height: 32px;
   --connected-color: #1973e7; /* from https://developers.google.com/cast */
   --disconnected-color: teal;
   cursor: pointer;
+}
+
+#castbutton:defined {
+  display: block;
 }
 
 /* audio controls */

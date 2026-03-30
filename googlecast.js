@@ -36,6 +36,13 @@ class GoogleCastPlayer extends EventTarget {
     window['__onGCastApiAvailable'] = (isAvailable) => {
       if (isAvailable) {
         this.initializeCastApi()
+        // The Google Cast SDK shows the cast button only after the browser has discovered
+        // Cast devices (via mDNS). For security reasons device discovery is managed by the browser
+        // (it can be triggered by e.g. View > Cast... in Chrome). It cannot be triggered by applications.
+        // Setting display to 'block' here ensures the cast button is visible BEFORE device discovery, which
+        // allows the user to trigger device discovery from within the application by clicking it.
+        const castbutton = document.getElementById('castbutton')
+        castbutton.style.display = 'block'
         this.isAvailable = true
       }
     }
